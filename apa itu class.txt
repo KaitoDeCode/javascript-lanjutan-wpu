@@ -1,0 +1,9 @@
+Class adalah blueprint untuk mencetak sebuah objek
+
+class berisi deklarasi untuk semua properti dan functions yang dimiliki object
+
+Setiap object selalu dibuat dari class
+
+Sebuah class bisa membuat object tanpa batas 
+
+properti di class adalah deklarasi sebuah fungsi/atau variable

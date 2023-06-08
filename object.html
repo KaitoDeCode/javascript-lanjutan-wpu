@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        //Membuat constructor function
+        function Person(firstName,lastName){
+            //props di cunstructor function
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+            //Membuat Method di Cunstructor Function
+            this.sayHello = function(name){
+                console.info(`Hello ${name}, my name is ${this.firstName}`)
+            }
+        }
+
+        const Adi = new Person("Adi","Kurniawan");
+        Adi.sayHello("Verdi")
+
+
+        const Verdi = new Person("Verdi","Gio")
+        Verdi.sayHello("Adi")
+
+
+        console.log(Adi)
+        console.log(Verdi)
+        //membuat object dari constructor funsi
+    </script>
+</body>
+</html>

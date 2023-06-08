@@ -1,0 +1,9 @@
+**Membuat Constructor functions
+
+=> Sebelum di Ecmascript 6, pembuatab class, biasanya menggunakan function. Hal ini dikarenakan sebenarnya JavaScript bukanlah bahasa pemrograman yang berfokus ke OOP
+
+=>untuk membuat Class di JS lama, kita bisa membuat fungsi
+
+=> Funsi ini disebut Constructor function
+
+=> Untuk membuat class di java Script disarankan huruf pertama fungsi harus huruf besar

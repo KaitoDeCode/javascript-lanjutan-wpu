@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Siswa {
+            //Public fields
+            name;
+            nilaiTugas;
+            nilaiUlangan;
+
+            //Private fields
+            #nilaiAkhir; // => selesai dibuat
+            #grade;      // => Selesai dibuat
+            #kelulusan;  // => Selesai dibuat
+
+            constructor(name,nilaiTugas,nilaiUlangan){
+                this.name= name;
+                this.nilaiUlangan = nilaiUlangan;
+                this.nilaiTugas = nilaiTugas;
+            }
+
+            //Method Public
+            getInfo(){
+                this.#setNilaiAkhir();
+                this.#setGrade();
+                this.#setKelulusan();
+                console.info(`Kepada Ananda terkasih ${this.name} dengan nilai akhir ${this.#nilaiAkhir} dan grade ${this.#grade}. Dengan demikian ananda ${this.name} dinyatakan ${this.#kelulusan}`)
+            }
+
+
+            //Private Method
+            #setNilaiAkhir(){
+
+                if(this.nilaiTugas > 100 || this.nilaiUlangan > 100) return console.error("Nilai Tugas atau Nilai ulangan ada yang melebihi nilai 100 ")
+                if(this.nilaiUlangan < 0 || this.nilaiTugas < 0) return console.error("Nilai Tugas tidak mencapai minimum nilai siswa");
+
+                this.nilaiTugas *= 0.3;
+                this.nilaiUlangan *= 0.4;
+                this.#nilaiAkhir = ( this.nilaiTugas + this.nilaiUlangan )
+            }
+
+            #setGrade(){
+               if(this.#nilaiAkhir < 0 || this.#nilaiAkhir > 100) return console.error("Terjadi Kesalahan dalam Penginputan Nilai");
+                
+               if(this.#nilaiAkhir === 100) return this.#grade = 'S';
+               if(this.#nilaiAkhir >= 80) return this.#grade = 'A'; 
+               if(this.#nilaiAkhir >= 70) return this.#grade = 'B';
+               if(this.#nilaiAkhir >= 60) return this.#grade = 'C';
+               if(this.#nilaiAkhir >= 50) return this.#grade = 'D';
+               if(this.#nilaiAkhir < 50) return this.#grade = 'E';
+            }
+
+            #setKelulusan(){
+                if(this.#grade == 'C' || this.#grade == 'D' ) return this.#kelulusan = "Tidak Lulus";
+                return this.#kelulusan = "Lulus"
+            }
+        }
+
+        class Data extends Siswa{
+            constructor(nama,alamat,email){
+                super(nama)
+                this.alamat = alamat;
+                this.email = email;
+            }
+
+            getData(){
+                console.info(`${this.nama} alamat ${this.email} email ${this.email}`)
+            }
+        }
+
+
+       const Damar = new Siswa("Damarwan",100,100)
+       Damar.getInfo();
+       console.log(Damar.nilaiTugas)
+
+       const Adi = new Data("Adi","Sirapan","adi.email")
+
+       console.info(Damar instanceof Siswa)
+       console.info(Adi instanceof Data)
+
+    //    console.info(Siswa instanceof Data)
+    //    console.info(Data instanceof Siswa)
+
+
+    </script>
+</body>
+</html>

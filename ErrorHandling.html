@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Users{
+              constructor(name,email,password){
+                this.name = name;
+                this.email = email;
+                this.password = password;
+              }
+
+            login(email,password){
+                if(email != this.email || password != this.password) throw new Error("email atau Password tidak sesuai")
+               console.log("Login Succes");
+            }
+        }
+
+        const Adi = new Users("Adi Kurniawan","Adi","lala")
+
+        try {
+            Adi.login("Adi","blala")
+        } catch (error) {
+            console.error(`Terjadi error => ${error.massage}`);
+        } finally{
+            console.log("Program selesai");
+        }
+
+    </script>
+</body>
+</html>

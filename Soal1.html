@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Soal1{
+            //Private Fieds
+            #jumlahMhs;
+            #Grade = [];
+            #kelulusan =[];
+            #nilaiAkhir=[];
+
+            constructor(){
+                this.namaMahasiswa=[""];
+                this.nilaiTugas=[];
+                this.nilaiUTS=[];
+                this.nilaiUAS=[];
+            }
+
+            //Method
+            getMahasiswa(){
+                this.#jumlahMhs = Number(prompt("Masukan Jumlah Mahasiswa : "));
+                try {
+                    if(this.#jumlahMhs.length === 0){ throw new Error("jumlah mahasiswa tidak boleh 0")}
+                } catch (error) {
+                    console.error(`Terjadi error : ${error}`);
+                }
+
+                for(let i = 0; i < this.#jumlahMhs; i++){
+                    this.namaMahasiswa[i]=prompt("Nama Mahasiswa :");
+                    this.nilaiTugas[i] = Number(prompt("Nilai Tugas : "));
+                    this.nilaiUTS[i] = Number(prompt("Nilai UTS :"));
+                    this.nilaiUAS[i] = Number(prompt("Nilai UAS : "));
+
+                    this.#nilaiAkhir[i] = ( 
+                        (this.nilaiTugas[i]*0.3) + (this.nilaiUTS[i]*0.3) + (this.nilaiUAS[i]*0.4) );
+
+                //    if(this.#nilaiAkhir[i] < 0 || this.#nilaiAkhir[i] > 100) throw new Error("Terjadi Kesalahan Input pada salah satu atau lebih nilai")
+                   
+                //     if(this.#nilaiAkhir[i] === 100){  this.#Grade[i] = 'SSS';}
+                //     if(this.#nilaiAkhir[i] >= 90){  this.#Grade[i] = 'A';}
+                //     if(this.#nilaiAkhir[i] >= 70){  this.#Grade[i] = 'B';}
+                //     if(this.#nilaiAkhir[i] >= 60){  this.#Grade[i] = 'C';}
+                //     if(this.#nilaiAkhir[i] < 60){  this.#Grade[i] = 'D';}
+                    
+                    if(this.#nilaiAkhir[i] >= 90){
+                       this.#Grade[i] = "A"
+                    }else if(this.#nilaiAkhir[i] >= 70){
+                        this.#Grade[i] = "B"
+                    }else if(this.#nilaiAkhir[i] >=50){
+                        this.#Grade[i] = "C"
+                    }else{
+                        this.#Grade[i] = "D"
+                    }
+
+                    
+                        if(this.#nilaiAkhir[i] < 60){ this.#kelulusan[i] = "Tidak Lulus"}else{
+                            this.#kelulusan[i] = "Lulus"
+                        }
+                    
+
+                }
+
+                for(let i=0;i < this.#jumlahMhs; i++){
+                    console.info(`Nama Mahasiswa   = ${this.namaMahasiswa[i]}`);
+                    console.info(`Nilai Akhir      = ${this.#nilaiAkhir[i]}`);
+                    console.info(`Grade            = ${this.#Grade[i]}`);
+                    console.info(`Lulus/TidakLulus = ${this.#kelulusan[i]}`);
+                }
+
+
+            }
+        }
+
+        const mahasiswa =  new Soal1()
+
+        mahasiswa.getMahasiswa()
+    </script>
+</body>
+</html>

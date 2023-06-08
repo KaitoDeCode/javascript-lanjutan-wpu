@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+class MathUtils{
+           static sum(...nums){
+            if(nums.length === 0) throw new Error("Angka harus lebih dari nilai 0")
+            let result=0;
+            for(const num of nums){
+                result += num; 
+ 
+            }
+ 
+            return result;
+ 
+        }
+ 
+    }
+
+    class ValidateError extends Error{
+        constructor(massage,fields){
+            super(massage)
+            this.fields = fields;
+        }
+    }
+    
+    try {
+        console.log(MathUtils.sum());
+    } catch (error) {
+       if(error instanceof ValidateError){
+    console.error(`Terjadi error => ${error.message} fields ${error.fields} `);
+       }else{
+        console.error(`Terjadi error => ${error}`);
+       }
+    }
+
+
+
+
+    // const tambah = ;
+
+    // try {
+    // } catch (error) {
+    //     console.error(`Terjadi error ${error}`);
+    // }
+   
+    </script>
+</body>
+</html>

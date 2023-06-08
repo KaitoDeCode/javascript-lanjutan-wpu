@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="like"></h1>
+
+    <button id="buttonLike">Like</button>
+
+    <script>
+
+        class Content{
+            //Privet fields
+            #like = 0;
+
+            //constructor
+          
+            //Method
+
+            incrementLike(){
+                this.#like++;
+            }
+
+            getLike(){
+                return this.#like;
+            }
+        }
+
+        //Object instace
+        const like = new Content()
+
+       like.incrementLike()
+       like.incrementLike()
+       
+
+        console.log(like.getLike())
+
+
+    </script>
+</body>
+</html>

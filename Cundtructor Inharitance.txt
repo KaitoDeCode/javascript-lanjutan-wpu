@@ -1,0 +1,5 @@
+Dalam Constructor bisa memanggil constructor lain dengan demikian 
+constructor akan warisi properti dari constructor lain
+
+Untuk memanggil Constructor lain =>
+    NamaConstructor.call(this.parameter)

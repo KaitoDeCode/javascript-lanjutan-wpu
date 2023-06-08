@@ -1,0 +1,1 @@
+setelah memebuat class, jika kita ingin membuat object dari class tersebut, kita bisa menggunakan kata kunci new

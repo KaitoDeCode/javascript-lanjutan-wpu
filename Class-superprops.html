@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Employee{
+            constructor(firstName){
+                this.firstName = firstName;
+            }
+            sayHello(name){
+                console.log(`Hello ${name}, iam Employee ${this.firstName}`);
+            }
+        }
+
+        class Manager extends Employee{
+            constructor(firstName,lastName){
+                //Kita wajib memanggil properti yang kita terima dari parent menggunakan Super
+                super(firstName);
+                this.lastName = lastName;
+            }
+            sayHello(name){
+                console.log(`Hello ${name}, Iam Manager ${this.firstName} ${this.lastName}`)
+            }
+        }
+
+        //Object Instance
+        const Adi = new Employee("Adi Kurniawan")
+        Adi.sayHello("Verdi")
+
+        const Verdi = new Manager("Verdi","Gio")
+        Verdi.sayHello("Adi")
+
+
+
+    </script>
+</body>
+</html>
